@@ -1,4 +1,3 @@
-Kontakt: aneta.popelova@bonami.cz
 
 Tento projekt má limit 120 minut (spotřebované na běh transformací a query), je třeba rozmyšlet i toto omezení náklady (pozor, Python workspace konzumuje minuty za každou minutu běhu). 
 
