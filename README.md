@@ -1,4 +1,4 @@
-# Datový Model & Dokumentace Projektu
+# Datový Model a Dokumentace Projektu
 ## E-Commerce Analytics Pipeline — Keboola
 
 ## 1. Architektura — přehled
