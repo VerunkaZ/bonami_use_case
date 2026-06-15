@@ -1,0 +1,41 @@
+{
+  "parameters": {},
+  "storage": {
+    "input": {
+      "tables": [
+        {
+          "source": "in.c-source.orders",
+          "destination": "orders",
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": []
+        },
+        {
+          "source": "in.c-source.products",
+          "destination": "products",
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": []
+        },
+        {
+          "source": "in.c-source.users",
+          "destination": "users",
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": []
+        }
+      ]
+    },
+    "output": {
+      "tables": [
+        {
+          "source": "data_quality_issues",
+          "destination": "out.c-audit.data_quality_issues"
+        }
+      ]
+    }
+  }
+}

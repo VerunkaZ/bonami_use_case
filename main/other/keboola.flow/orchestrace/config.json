@@ -1,0 +1,168 @@
+{
+  "tasks": [
+    {
+      "id": "6ce060bd-6ffe-42ec-8f69-60f813196b8d",
+      "name": "keboola.snowflake-transformation-01ktc1wdyy7rjmvcpmj591y3bh",
+      "phase": "72d79f7d-712a-42a2-9e4b-9f6af0f2bcc2",
+      "task": {
+        "type": "job",
+        "mode": "run",
+        "componentId": "keboola.snowflake-transformation",
+        "configId": "01ktc1wdyy7rjmvcpmj591y3bh"
+      },
+      "enabled": true
+    },
+    {
+      "id": "0fc46a4b-c3af-4bc9-97d3-6ada5cb987a0",
+      "name": "keboola.snowflake-transformation-01kth3162kywv6dcda3n1wt6a0",
+      "phase": "72d79f7d-712a-42a2-9e4b-9f6af0f2bcc2",
+      "task": {
+        "type": "job",
+        "mode": "run",
+        "componentId": "keboola.snowflake-transformation",
+        "configId": "01kth3162kywv6dcda3n1wt6a0"
+      },
+      "enabled": true
+    },
+    {
+      "id": "02938452-20c8-44d6-b26c-ca6236ccdb18",
+      "name": "keboola.snowflake-transformation-01kth70t37qvc2mxta37mm0kjm",
+      "phase": "phase-2",
+      "task": {
+        "type": "job",
+        "mode": "run",
+        "componentId": "keboola.snowflake-transformation",
+        "configId": "01kth70t37qvc2mxta37mm0kjm"
+      },
+      "enabled": true
+    },
+    {
+      "id": "e2428ab7-d6f8-4216-9e93-5f21c6ebbb4c",
+      "name": "keboola.python-transformation-v2-01ktm0rtsj4v22wwhr3d7ghrqg",
+      "phase": "phase-3",
+      "task": {
+        "type": "job",
+        "mode": "run",
+        "componentId": "keboola.python-transformation-v2",
+        "configId": "01ktm0rtsj4v22wwhr3d7ghrqg"
+      },
+      "enabled": true
+    }
+  ],
+  "phases": [
+    {
+      "id": "72d79f7d-712a-42a2-9e4b-9f6af0f2bcc2",
+      "name": "Phase 1",
+      "next": [
+        {
+          "id": "e6afcf6f-e9f4-46a3-8a89-7f4b557f36ba",
+          "name": "Condition 1",
+          "condition": {
+            "type": "operator",
+            "operator": "EQUALS",
+            "operands": [
+              {
+                "type": "phase",
+                "phase": "72d79f7d-712a-42a2-9e4b-9f6af0f2bcc2",
+                "value": "status"
+              },
+              {
+                "type": "const",
+                "value": "success"
+              }
+            ]
+          },
+          "goto": "phase-2"
+        },
+        {
+          "id": "86c82136-b205-4d12-a306-3a4c76404068",
+          "name": "Condition 2",
+          "condition": {
+            "type": "operator",
+            "operator": "AND",
+            "operands": [
+              {
+                "type": "operator",
+                "operator": "INCLUDES",
+                "operands": [
+                  {
+                    "type": "task",
+                    "task": "6ce060bd-6ffe-42ec-8f69-60f813196b8d",
+                    "value": "job.status"
+                  },
+                  {
+                    "type": "array",
+                    "operands": [
+                      {
+                        "type": "const",
+                        "value": "error"
+                      },
+                      {
+                        "type": "const",
+                        "value": "terminated"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "operator",
+                "operator": "EQUALS",
+                "operands": [
+                  {
+                    "type": "task",
+                    "task": "0fc46a4b-c3af-4bc9-97d3-6ada5cb987a0",
+                    "value": "job.status"
+                  },
+                  {
+                    "type": "const",
+                    "value": "success"
+                  }
+                ]
+              }
+            ]
+          },
+          "goto": "phase-2"
+        },
+        {
+          "id": "bd6c31f6-91bb-4d1d-9845-677fd9e08e71",
+          "goto": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "Phase 2",
+      "next": [
+        {
+          "id": "09ecaae9-cc13-4682-8694-d93f3d6544ed",
+          "name": "Condition 1",
+          "condition": {
+            "type": "operator",
+            "operator": "EQUALS",
+            "operands": [
+              {
+                "type": "phase",
+                "phase": "phase-2",
+                "value": "status"
+              },
+              {
+                "type": "const",
+                "value": "success"
+              }
+            ]
+          },
+          "goto": "phase-3"
+        },
+        {
+          "id": "2777fec9-3879-4134-a528-0a480b582a7b",
+          "goto": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Phase 3"
+    }
+  ]
+}

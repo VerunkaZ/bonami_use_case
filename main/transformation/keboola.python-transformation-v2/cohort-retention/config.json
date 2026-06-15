@@ -1,0 +1,39 @@
+{
+  "parameters": {
+    "packages": [
+      "pandas"
+    ]
+  },
+  "storage": {
+    "input": {
+      "tables": [
+        {
+          "source": "out.c-analytics.user_segments",
+          "destination": "user_segments",
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "keep_internal_timestamp_column": false
+        },
+        {
+          "source": "out.c-staging.stg_orders",
+          "destination": "stg_orders",
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "keep_internal_timestamp_column": false
+        }
+      ]
+    },
+    "output": {
+      "tables": [
+        {
+          "destination": "out.c-analytics.cohort_retention",
+          "source": "cohort_retention"
+        }
+      ]
+    }
+  }
+}
