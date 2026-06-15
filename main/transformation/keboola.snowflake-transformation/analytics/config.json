@@ -1,0 +1,53 @@
+{
+  "parameters": {},
+  "storage": {
+    "output": {
+      "data_type_support": "authoritative",
+      "tables": [
+        {
+          "destination": "out.c-analytics.monthly_revenue_by_country",
+          "source": "monthly_revenue_by_country"
+        },
+        {
+          "destination": "out.c-analytics.category_performance",
+          "source": "category_performance"
+        },
+        {
+          "destination": "out.c-analytics.user_segments",
+          "source": "user_segments"
+        }
+      ]
+    },
+    "input": {
+      "tables": [
+        {
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "source": "out.c-staging.stg_orders",
+          "destination": "stg_orders",
+          "keep_internal_timestamp_column": false
+        },
+        {
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "source": "out.c-staging.stg_products",
+          "destination": "stg_products",
+          "keep_internal_timestamp_column": false
+        },
+        {
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "source": "out.c-staging.stg_users",
+          "destination": "stg_users",
+          "keep_internal_timestamp_column": false
+        }
+      ]
+    }
+  }
+}

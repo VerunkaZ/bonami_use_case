@@ -1,0 +1,53 @@
+{
+  "parameters": {},
+  "storage": {
+    "output": {
+      "data_type_support": "authoritative",
+      "tables": [
+        {
+          "destination": "out.c-staging.stg_orders",
+          "source": "stg_orders"
+        },
+        {
+          "destination": "out.c-staging.stg_products",
+          "source": "stg_products"
+        },
+        {
+          "destination": "out.c-staging.stg_users",
+          "source": "stg_users"
+        }
+      ]
+    },
+    "input": {
+      "tables": [
+        {
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "source": "in.c-source.orders",
+          "destination": "orders",
+          "keep_internal_timestamp_column": false
+        },
+        {
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "source": "in.c-source.products",
+          "destination": "products",
+          "keep_internal_timestamp_column": false
+        },
+        {
+          "where_column": "",
+          "where_values": [],
+          "where_operator": "eq",
+          "columns": [],
+          "source": "in.c-source.users",
+          "destination": "users",
+          "keep_internal_timestamp_column": false
+        }
+      ]
+    }
+  }
+}

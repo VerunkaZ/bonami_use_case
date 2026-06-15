@@ -1,0 +1,141 @@
+{
+  "version": 2,
+  "project": {
+    "id": 25731,
+    "apiHost": "connection.north-europe.azure.keboola.com/admin/projects/25731/dashboard"
+  },
+  "allowTargetEnv": false,
+  "sortBy": "id",
+  "naming": {
+    "branch": "{branch_name}",
+    "config": "{component_type}/{component_id}/{config_name}",
+    "configRow": "rows/{config_row_name}",
+    "schedulerConfig": "schedules/{config_name}",
+    "sharedCodeConfig": "_shared/{target_component_id}",
+    "sharedCodeConfigRow": "codes/{config_row_name}",
+    "variablesConfig": "variables",
+    "variablesValuesRow": "values/{config_row_name}",
+    "dataAppConfig": "app/{component_id}/{config_name}"
+  },
+  "allowedBranches": [
+    "__main__"
+  ],
+  "ignoredComponents": [],
+  "templates": {
+    "repositories": [
+      {
+        "type": "git",
+        "name": "keboola",
+        "url": "https://github.com/keboola/keboola-as-code-templates.git",
+        "ref": "main"
+      },
+      {
+        "type": "git",
+        "name": "keboola-components",
+        "url": "https://github.com/keboola/keboola-as-code-templates-components.git",
+        "ref": "main"
+      }
+    ]
+  },
+  "branches": [
+    {
+      "id": 472593,
+      "path": "main",
+      "metadata": {
+        "KBC.McpServer.v2.workspaceId": "104825327"
+      }
+    }
+  ],
+  "configurations": [
+    {
+      "branchId": 472593,
+      "componentId": "keboola.flow",
+      "id": "01kthkcshdrfjtg4s89regn0a9",
+      "path": "other/keboola.flow/orchestrace",
+      "rows": []
+    },
+    {
+      "branchId": 472593,
+      "componentId": "keboola.mcp-server-tool",
+      "id": "01ktgqs67xwrtr1n3f7bjx9xkz",
+      "path": "other/keboola.mcp-server-tool/mcp-workspace-5002a5bf",
+      "rows": []
+    },
+    {
+      "branchId": 472593,
+      "componentId": "keboola.python-transformation-v2",
+      "id": "01ktm0rtsj4v22wwhr3d7ghrqg",
+      "path": "transformation/keboola.python-transformation-v2/cohort-retention",
+      "metadata": {
+        "KBC.MCP.updatedBy.version.12": "true",
+        "KBC.MCP.updatedBy.version.15": "true",
+        "KBC.MCP.updatedBy.version.23": "true",
+        "KBC.MCP.updatedBy.version.37": "true",
+        "KBC.MCP.updatedBy.version.38": "true",
+        "KBC.MCP.updatedBy.version.47": "true",
+        "KBC.MCP.updatedBy.version.8": "true",
+        "KBC.MCP.updatedBy.version.9": "true"
+      },
+      "rows": []
+    },
+    {
+      "branchId": 472593,
+      "componentId": "keboola.scheduler",
+      "id": "01ktp52s2hsszs756dyg9kktf8",
+      "path": "schedules/scheduler-for-01kthkcshdrfjtg4s89regn0a9",
+      "relations": [
+        {
+          "componentId": "keboola.flow",
+          "configId": "01kthkcshdrfjtg4s89regn0a9",
+          "type": "schedulerFor"
+        }
+      ],
+      "rows": []
+    },
+    {
+      "branchId": 472593,
+      "componentId": "keboola.snowflake-transformation",
+      "id": "01ktc1wdyy7rjmvcpmj591y3bh",
+      "path": "transformation/keboola.snowflake-transformation/data-quality-audit",
+      "metadata": {
+        "KBC.MCP.updatedBy.version.10": "true",
+        "KBC.MCP.updatedBy.version.11": "true",
+        "KBC.MCP.updatedBy.version.12": "true",
+        "KBC.MCP.updatedBy.version.29": "true",
+        "KBC.MCP.updatedBy.version.8": "true",
+        "KBC.MCP.updatedBy.version.9": "true"
+      },
+      "rows": []
+    },
+    {
+      "branchId": 472593,
+      "componentId": "keboola.snowflake-transformation",
+      "id": "01kth3162kywv6dcda3n1wt6a0",
+      "path": "transformation/keboola.snowflake-transformation/staging",
+      "metadata": {
+        "KBC.MCP.updatedBy.version.19": "true",
+        "KBC.MCP.updatedBy.version.20": "true",
+        "KBC.MCP.updatedBy.version.21": "true",
+        "KBC.MCP.updatedBy.version.26": "true",
+        "KBC.MCP.updatedBy.version.27": "true",
+        "KBC.MCP.updatedBy.version.28": "true",
+        "KBC.MCP.updatedBy.version.29": "true"
+      },
+      "rows": []
+    },
+    {
+      "branchId": 472593,
+      "componentId": "keboola.snowflake-transformation",
+      "id": "01kth70t37qvc2mxta37mm0kjm",
+      "path": "transformation/keboola.snowflake-transformation/analytics",
+      "metadata": {
+        "KBC.MCP.updatedBy.version.18": "true",
+        "KBC.MCP.updatedBy.version.19": "true",
+        "KBC.MCP.updatedBy.version.20": "true",
+        "KBC.MCP.updatedBy.version.23": "true",
+        "KBC.MCP.updatedBy.version.27": "true"
+      },
+      "rows": []
+    }
+  ]
+}
