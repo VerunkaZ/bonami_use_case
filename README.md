@@ -1,5 +1,6 @@
 # Datový Model a Dokumentace Projektu
-## E-Commerce Analytics Pipeline — Keboola
+
+![Realita zrojových dat](bonami_preview)
 
 ## 1. Architektura — přehled
 
