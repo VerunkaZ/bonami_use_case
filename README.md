@@ -1,6 +1,6 @@
 # Datový Model a Dokumentace Projektu
 
-![Realita zrojových dat](bonami_preview)
+![Realita zrojových dat](bonami_preview.png)
 
 ## 1. Architektura — přehled
 
